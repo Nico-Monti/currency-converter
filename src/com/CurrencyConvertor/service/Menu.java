@@ -30,7 +30,8 @@ public class Menu {
                     break;
                 case 3:
                     manager.showSupportedCurrencies();
-                    break;
+                    System.out.println(manager.getSupportedCurrencyCodesMap().size());
+                break;
                 case 4:
                     System.out.println("""
                             
@@ -46,11 +47,11 @@ public class Menu {
         System.out.print("""
                 ******************************************
                             Currency converter
-                
-                1) Exchange currencies
+          
+                1) Exchange currencies.
                 2) Show the conversions history.
                 3) View supported currencies.
-                4) Exit
+                4) Exit.
                 
                 Select an option""");
     }

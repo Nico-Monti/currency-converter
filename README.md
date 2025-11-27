@@ -146,12 +146,12 @@ classDiagram
 ---
 ## 🛠️ Technologies <a name="id4"></a>
 
-|Technology | Use |
-|----------|-----|
-| **Java** | Main programming language |
-| **Gson-2.13.2** | Response parsing with (`JsonParser`, `JsonObject`, etc.) |
-| **ExchangeRate-API** | Real-time data source |
-| **Postman** | Software for testing the API responses |
+| Technology           | Use                                                      |
+|----------------------|----------------------------------------------------------|
+| **Java**             | Main programming language                                |
+| **Gson-2.13.2**      | Response parsing with (`JsonParser`, `JsonObject`, etc.) |
+| **ExchangeRate-API** | Real-time data source                                    |
+| **Postman**          | Software for testing the API responses                   |
 
 ---
 ## ⚙️ Requisites <a name="id5"></a>

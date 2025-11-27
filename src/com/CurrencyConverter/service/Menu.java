@@ -5,9 +5,9 @@ import com.CurrencyConverter.util.InputHandler;
 
 public class Menu {
     private static CurrencyManager manager;
-    private static String currencyCodeA;
-    private static String currencyCodeB;
-    private static double amountMoney;
+    private static String codeA;
+    private static String codeB;
+    private static double amount;
     private static InputHandler handler;
     private static int option;
 
@@ -31,7 +31,7 @@ public class Menu {
                 case 3:
                     manager.showSupportedCurrencies();
                     System.out.println(manager.SupportedCurrencyCodesMap().size());
-                break;
+                    break;
                 case 4:
                     System.out.println("""
                             
@@ -64,28 +64,28 @@ public class Menu {
                 Enter 1 to return to the main menu or
                 Search currency code
                 """);
-        currencyCodeA = handler.readCurrency(manager);
-        if(currencyCodeA.equals("1")){
+        codeA = handler.readCurrency(manager);
+        if(codeA.equals("1")){
             System.out.println("Cancelling...\n");
             mainMenu();
         }
 
         System.out.print("Search another currency code");
-        currencyCodeB = handler.readCurrency(manager);
-        if (currencyCodeB.equals("1")) mainMenu();
+        codeB = handler.readCurrency(manager);
+        if (codeB.equals("1")) mainMenu();
 
-        if(currencyCodeA.equals(currencyCodeB)){
+        if(codeA.equals(codeB)){
             System.out.println("Currencies must be different!");
             exchangeCurrencies();
         }
 
-        Currency currencyA = new Currency(currencyCodeA, manager.getSupportedCurrencyCodes().get(currencyCodeA));
-        Currency currencyB = new Currency(currencyCodeB, manager.getSupportedCurrencyCodes().get(currencyCodeB));
+        Currency currencyA = new Currency(codeA, manager.getSupportedCurrencyCodes().get(codeA));
+        Currency currencyB = new Currency(codeB, manager.getSupportedCurrencyCodes().get(codeB));
 
         System.out.printf("Amount of money that you want to convert from [%s] to [%s]",currencyA.getCode(),currencyB.getCode());
-        amountMoney = handler.readAmount();
+        amount = handler.readAmount();
 
-        conversion = apiRequest.conversion(currencyA, currencyB, amountMoney);
+        conversion = apiRequest.conversion(currencyA, currencyB, amount);
         manager.addConversion(conversion);
 
         System.out.println("Result: ");
